@@ -12,6 +12,7 @@
       "eslint:recommended"
     ],
     "rules": {
+      "no-sparse-arrays": "off",
       "no-console": "warn",
       "indent": [
         "error",
