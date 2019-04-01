@@ -1,0 +1,28 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemy-fullstack-js-spring-2019/array-methods.git"
+  },
+  "keywords": [],
+  "author": "Cheri Portman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alchemy-fullstack-js-spring-2019/array-methods/issues"
+  },
+  "homepage": "https://github.com/alchemy-fullstack-js-spring-2019/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.6.0"
+  }
+}
