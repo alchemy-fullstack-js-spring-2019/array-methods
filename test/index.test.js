@@ -1,5 +1,5 @@
 /* eslint-disable */
-const { map, filter, findIndex } = require('../lib/index');
+const { map, filter, findIndex, reduce } = require('../lib/index');
 
 describe('Map function', () => {
   const mock = jest.fn(n => n + 2);
@@ -56,6 +56,25 @@ describe('findIndex function', () => {
     const expected = -1;
     const input = [1, 2, 3, 4, 5];
     const result = findIndex(input, mock);
+
+    expect(result).toEqual(expected);
+  });
+});
+
+describe('Reduce function', () => {
+  const mock = jest.fn((acc, n) => acc + n);
+  it('return sum', () => {
+    const expected = 10;
+    const input = [1, 2, 3, 4];
+    const result = reduce(input, mock);
+
+    expect(result).toEqual(expected);
+  });
+  
+  it('return sum, with initial and hole in input', () => {
+    const expected = 20;
+    const input = [1, 2, 3, , 4];
+    const result = reduce(input, mock, 10);
 
     expect(result).toEqual(expected);
   });
