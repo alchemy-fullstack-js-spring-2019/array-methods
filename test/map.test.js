@@ -9,10 +9,12 @@ describe('map function', () => {
   });
   it('deal with an array with holes', () => {
     const mock = jest.fn(n => n);
+    // eslint-disable-next-line
     expect(ourMap([1, 2,, 4], mock)).toEqual([1, 2,, 4]);
   });
   it('add map to our map', () => {
     const mock = jest.fn(n => n * 2);
+    // eslint-disable-next-line
     expect(ourMap([1, 2,, 4], mock)).toEqual([2, 4,, 8]);
   });
 });
