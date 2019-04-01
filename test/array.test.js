@@ -1,4 +1,4 @@
-const { map, filter, findIndex } = require('../lib/array');
+const { map, filter, findIndex, reduce } = require('../lib/array');
 
 describe('map function', ()=> {
     it('takes an array and manipulates each item in the array, resulting in a new array', ()=> {
@@ -28,5 +28,13 @@ describe('findIndex function', ()=> {
         const mock = jest.fn(n => n % 2 === 0);
         const result = findIndex([5, 7, 9, 11, 21], mock);
         expect(result).toEqual(-1);
+    });
+});
+
+describe('reduce function', () => {
+    it('takes an array and reduces it to its sum', () => {
+        const mock = jest.fn((accumulator, currentValue) => accumulator + currentValue);
+        const result = reduce([1, 2, 3], mock);
+        expect(result).toEqual(6);
     });
 });
