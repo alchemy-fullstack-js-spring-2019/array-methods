@@ -33,14 +33,14 @@ describe('findIndex function', ()=> {
 
 describe('reduce function', () => {
     it('takes an array and reduces it to its sum', () => {
-        const mock = jest.fn((accumulator, currentValue) => accumulator + currentValue);
+        const mock = jest.fn((accumulator, currentValue) => accumulator * currentValue);
         const result = reduce([1, 2, 3], mock);
         expect(result).toEqual(6);
     });
     it('takes an array and reduces it to its sum plus an initial value', () => {
-        const mock = jest.fn((accumulator, currentValue) => accumulator + currentValue);
+        const mock = jest.fn((accumulator, currentValue) => accumulator * currentValue);
         const result = reduce([1, 2, 3], mock, 5);
-        expect(result).toEqual(11);
+        expect(result).toEqual(30);
     });
 });
 
