@@ -1,4 +1,4 @@
-const { map, filter, findIndex, reduce } = require('../lib/array');
+const { map, filter, findIndex, reduce, every } = require('../lib/array');
 
 describe('map function', ()=> {
     it('takes an array and manipulates each item in the array, resulting in a new array', ()=> {
@@ -36,5 +36,19 @@ describe('reduce function', () => {
         const mock = jest.fn((accumulator, currentValue) => accumulator + currentValue);
         const result = reduce([1, 2, 3], mock);
         expect(result).toEqual(6);
+    });
+});
+
+describe('every function', () => {
+    it('return true if every item in array is true', () => {
+        const mock = jest.fn(n => n % 2 === 0);
+        const result = every([2, 4, 6, 8], mock);
+        expect(result).toBeTruthy();
+    });
+    
+    it('return false if any item is false', () => {
+        const mock = jest.fn(n => n % 2 === 0);
+        const result = every([2, 5, 6, 8], mock);
+        expect(result).toBeFalsy();
     });
 });
