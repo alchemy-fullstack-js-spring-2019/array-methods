@@ -14,7 +14,8 @@ describe('map function', ()=> {
 describe('filter function', ()=> {
     it('takes an array and returns an array with the items that are truthy', ()=> {
         const mock = jest.fn(n => n % 2 === 0);
-        const result = filter([2, 4, 7], mock);
+        //eslint-disable-next-line
+        const result = filter([2, 4,, 7], mock);
         expect(result).toEqual([2, 4]);
 
     });
@@ -23,8 +24,10 @@ describe('filter function', ()=> {
 describe('findIndex function', ()=> {
     it('this takes an array and number and returns the index of said number', ()=> {
         const mock = jest.fn(n => n % 2 === 0);
-        const result = findIndex([5, 7, 9, 11, 8], mock);
-        expect(result).toEqual(4);
+        //eslint-disable-next-line
+        const result = findIndex([5, 7, 9, 11,, 8], mock);
+        expect(result).toEqual(5);
+        expect(mock).toHaveBeenCalledTimes(5);
     });
     it('this takes an array and number and returns -1 if no index found', ()=> {
         const mock = jest.fn(n => n % 2 === 0);
@@ -41,7 +44,8 @@ describe('reduce function', () => {
     });
     it('takes an array and reduces it to its sum plus an initial value', () => {
         const mock = jest.fn((accumulator, currentValue) => accumulator * currentValue);
-        const result = reduce([1, 2, 3], mock, 5);
+        //eslint-disable-next-line
+        const result = reduce([1, 2,, 3], mock, 5);
         expect(result).toEqual(30);
     });
 });
@@ -49,7 +53,8 @@ describe('reduce function', () => {
 describe('every function', () => {
     it('return true if every item in array is true', () => {
         const mock = jest.fn(n => n % 2 === 0);
-        const result = every([2, 4, 6, 8], mock);
+        //eslint-disable-next-line
+        const result = every([2, 4, 6,, 8], mock);
         expect(result).toBeTruthy();
     });
     
