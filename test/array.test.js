@@ -3,8 +3,10 @@ const { map, filter, findIndex, reduce, every } = require('../lib/array');
 describe('map function', ()=> {
     it('takes an array and manipulates each item in the array, resulting in a new array', ()=> {
         const mock = jest.fn(n => n * 2);
-        const result = map([1, 2, 3], mock);
-        expect(result).toEqual([2, 4, 6]);
+        //eslint-disable-next-line
+        const result = map([1, 2,, 3], mock);
+        //eslint-disable-next-line
+        expect(result).toEqual([2, 4,, 6]);
         expect(mock).toHaveBeenCalledTimes(3);
     });
 });
