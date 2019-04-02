@@ -1,4 +1,4 @@
-const { map, filter, findIndex, reduce, every } = require('../lib/array');
+const { map, filter, findIndex, reduce, every, forEach } = require('../lib/array');
 
 describe('map function', ()=> {
     it('takes an array and manipulates each item in the array, resulting in a new array', ()=> {
@@ -62,5 +62,14 @@ describe('every function', () => {
         const mock = jest.fn(n => n % 2 === 0);
         const result = every([2, 5, 6, 8], mock);
         expect(result).toBeFalsy();
+    });
+});
+
+describe('forEach function', () => {
+    it('loops through an array and performs callback on each item', () => {
+        const mock = jest.fn(() => console.log('sup'));
+        //eslint-disable-next-line
+        forEach([1, 2,, 3], mock);
+        expect(mock).toHaveBeenCalledTimes(3);
     });
 });
