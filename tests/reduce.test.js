@@ -9,4 +9,9 @@ describe('reduce', () => {
         const result = reduce([1, 2, 3], (n, a) => a += n, 3);
         expect(result).toBe(9);
     });
+    it('takes array [1, , 3] callback sum, and starting value and returns 7', () => {
+        //eslint-disable-next-line
+        const result = reduce([1, , 3], (n, a) => a += n, 3);
+        expect(result).toBe(7);
+    });
 });
