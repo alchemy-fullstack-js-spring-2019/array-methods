@@ -1,6 +1,5 @@
 const { reduce } = require('../lib/reduce');
 
-
 describe('reduce tests', () => {
   it('reduce array to the sum', () => {
     let int = 0;
@@ -10,7 +9,7 @@ describe('reduce tests', () => {
     expect(actual).toEqual(6);
   });
 
-  it('reduce array to the sum', () => {
+  it('test 2', () => {
     let initialValue = null;
     const mock = jest.fn((acc, n) => acc + n);
     const array = [5, 5, 5];
