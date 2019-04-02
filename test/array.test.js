@@ -67,9 +67,9 @@ describe('every function', () => {
 
 describe('forEach function', () => {
     it('loops through an array and performs callback on each item', () => {
-        const mock = jest.fn(() => console.log('sup'));
+        const mock = jest.fn((array) => console.log(array));
         //eslint-disable-next-line
         forEach([1, 2,, 3], mock);
-        expect(mock).toHaveBeenCalledTimes(3);
+        expect(mock).toHaveBeenCalledTimes(4);
     });
 });
