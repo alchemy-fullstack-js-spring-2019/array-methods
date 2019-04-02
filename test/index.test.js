@@ -69,21 +69,31 @@ describe('findIndex function', () => {
 });
 
 describe('Reduce function', () => {
-  const mock = jest.fn((acc, n, i) => acc * n);
   it('return sum', () => {
+    const mock = jest.fn((acc, n, i) => acc * n);
     const expected = 6;
     const input = [1, 2, 3];
     const result = reduce(input, mock);
 
     expect(result).toEqual(expected);
-    expect(mock.mock.calls[0][2]).toBe(0);
-    expect(mock.mock.calls[1][2]).toBe(1);
+    expect(mock.mock.calls[0][2]).toBe(1);
+    expect(mock.mock.calls[1][2]).toBe(2);
   });
   
   it('return sum, with initial and hole in input', () => {
+    const mock = jest.fn((acc, n, i) => acc * n);
     const expected = 240;
     const input = [1, 2, 3, , 4];
     const result = reduce(input, mock, 10);
+
+    expect(result).toEqual(expected);
+  });
+
+  it('return sum, with initial and hole in input', () => {
+    const mock = jest.fn((acc, n, i) => acc + n);
+    const expected = 10;
+    const input = [1, 2, 3, , 4];
+    const result = reduce(input, mock);
 
     expect(result).toEqual(expected);
   });
